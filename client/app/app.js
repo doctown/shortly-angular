@@ -18,7 +18,15 @@ angular.module('shortly', [
     // Your code here
     .when('/links', {
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
+      controller: 'LinksController', 
+      resolve: {
+        getAll: function($http) {
+          return $http({
+            method: 'GET',
+            url: '/api/links'
+          });
+        }
+      }
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',

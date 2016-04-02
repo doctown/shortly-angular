@@ -13,19 +13,19 @@ angular.module('shortly.services', [])
     });
   };
 
-  var getAll = function() {
-    return $http({
-      method: 'GET',
-      url: '/api/links'
-    })
-    .then(function(links) {
-        // return the links retrived from server
-      return links.data;
-    });
-  };
+  // var getAll = function() {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/api/links'
+  //   })
+  //   .then(function(links) {
+  //       // return the links retrived from server
+  //     return links.data;
+  //   });
+  // };
 
   return {
-    getAll: getAll,
+    //getAll: getAll,
     addOne: addOne
   };
 })

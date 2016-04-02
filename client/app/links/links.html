@@ -6,13 +6,14 @@
     <a ng-click='signout()' class='logout'>Logout</a>
 </div>
 
-
 <div id='container'>
   <form name="searchForm">
     <input class='text' ng-model='query'>
   </form>
 </div>
-<div id='container' ng-repeat="link in data.links | filter:query | orderBy:'-visits' ">
+
+<mylink ng-repeat="link in data.links | filter:query | orderBy:'-visits' ">
+<!-- <div id="container">
   <div class='link'>
     <img src='assets/redirect_icon.png'/>
     <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
@@ -20,4 +21,4 @@
   <div class='original'>{{ link.url }}</div>
   <a href='{{ link.baseUrl }}/{{ link.code }}'>{{ link.baseUrl }}/{{ link.code }}</a>
   </div>
-</div>
+</div> -->

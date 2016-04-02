@@ -1,6 +1,6 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links, Auth) {
+.controller('LinksController', function ($scope, Links, Auth, getAll) {
   // store all links
   // Initialize links with all links stored on server from getAll call
 
@@ -12,9 +12,7 @@ angular.module('shortly.links', [])
 
   $scope.data = {};
   
-  Links.getAll().then(function(data) {
-    $scope.data.links = data;
-  });
+  $scope.data.links = getAll.data;
 
   $scope.signout = function() {
     Auth.signout();
@@ -22,4 +20,9 @@ angular.module('shortly.links', [])
 
   $scope.init();
 
+})
+.directive('mylink', function() {
+  return {
+    templateUrl: 'app/links/mylink.html'
+  };
 });

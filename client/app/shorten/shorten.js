@@ -16,10 +16,14 @@ angular.module('shortly.shorten', [])
 
   $scope.link = {};
   $scope.newlink;
+  $scope.showSpinner;
 
   $scope.addLink = function() {
+    $scope.showSpinner = true;
     Links.addOne($scope.link).then(function(link) {
       $scope.newlink = link;
+      $scope.showSpinner = false;
+      $scope.link = '';
     });
   };
 
