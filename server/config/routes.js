@@ -14,6 +14,9 @@ module.exports = function (app, express) {
   app.get('/api/links/', linksController.allLinks);
   app.post('/api/links/', linksController.newLink);
 
+  app.get('/signin', function (req, res) {
+    res.render('/signin');
+  });
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler
   app.use(helpers.errorLogger);
