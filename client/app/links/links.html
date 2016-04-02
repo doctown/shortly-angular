@@ -6,9 +6,15 @@
     <a ng-click='signout()' class='logout'>Logout</a>
 </div>
 
-<div id='container' ng-repeat="link in data.links">
-  <img src='assets/redirect_icon.png'/>
-  <div class='info'>
+
+<div id='container'>
+  <form name="searchForm">
+    <input class='text' ng-model='query'>
+  </form>
+</div>
+<div id='container' ng-repeat="link in data.links | filter:query | orderBy:'-visits' ">
+  <div class='link'>
+    <img src='assets/redirect_icon.png'/>
     <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
   <div class='title'>{{ link.title }}</div>
   <div class='original'>{{ link.url }}</div>

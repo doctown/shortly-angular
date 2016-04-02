@@ -31,6 +31,16 @@ h1 {
   float: left;
 }
 
+.navigation .logout {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  float: right;
+}
+
 .navigation li a {
   width: 100px;
   height: 20px;
@@ -40,11 +50,11 @@ h1 {
   text-align: center;
 }
 
-.navigation li a:hover {
+.navigation a:hover {
   background-color: #ddd;
 }
 
-.navigation li a.selected {
+.navigation a.selected {
   background-color: #ccc;
 }
 
@@ -146,3 +156,10 @@ input[type=url]:focus {
   clear: both;
 }
 
+.css-form input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-touched {
+  background-color: #78FA89;
+}
